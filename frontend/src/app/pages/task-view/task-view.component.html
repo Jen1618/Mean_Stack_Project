@@ -1,0 +1,25 @@
+<div class="centered-content">
+    <div class="blog-manager-container">
+        <div class="sidebar">
+            <h1 class="title has-text-primary">Blogs</h1>
+            <div class="blog-menu">
+                <a href="#" class="blog-menu-item is-active" *ngFor="let blog for blogs">
+                    <p class="white-text">
+                        {{ blog.title }}
+                        <span class="pull-right content-delete btn-rounded-corners">X</span>
+                    </p>
+                </a>
+            </div> 
+            <button class="btn btn-primary btn-rounded-corners">Add Blog</button>
+        </div>
+        <div class="blog-list-container">
+            <h1 class="title has-text-primary">Contents</h1>
+                <div class="content complete">  <!--Do not need the complete function so delete-->
+                    <p class="white-text">
+                        Content
+                        <span class="pull-right content-delete btn-rounded-corners">X</span>
+                    </p>
+                </div>
+            </div>
+    </div>
+</div>
