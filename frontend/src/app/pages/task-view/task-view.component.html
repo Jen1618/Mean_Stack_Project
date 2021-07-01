@@ -6,11 +6,11 @@
                 <a class="blog-menu-item" *ngFor="let blog of blogs" [routerLink] = "['/blogs', blog._id]" routerLinkActive = "is-active">
                     <p class="white-text">
                         {{ blog.title }}
-                        <span class="pull-right content-delete btn-rounded-corners">X</span>
+                        <span class="pull-right content-delete btn-rounded-corners" (click) = "deleteBlog(blog)">X</span>
                     </p>
                 </a>
             </div> 
-            <button class="btn btn-primary btn-rounded-corners">Add Blog</button>
+            <button class="btn btn-primary btn-rounded-corners" routerLink= "/new-blog">Add Blog</button>
         </div>
         <div class="blog-list-container">
             <h1 class="title has-text-primary">
@@ -19,9 +19,12 @@
                 <div class="content" *ngFor = "let content of contents">  <!--Do not need the complete function so delete-->
                     <p class="white-text">
                         {{content.info}}
-                        <span class="pull-right content-delete btn-rounded-corners">X</span>
+                        <span class="pull-right content-delete btn-rounded-corners"></span>
                     </p>
                 </div>
+                <button class="btn btn-primary add-button" (click)="addContentClick()">
+                    Add Contents
+                </button>
             </div>
     </div>
 </div>

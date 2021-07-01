@@ -1,0 +1,8 @@
+<div class="centered-content">
+    <div class="modal-box form-group">
+        <h1 class= "title">Create new content</h1>
+        <input #contentInput type="text" class= "form-control has-background-light" placeholder="Enter content"/>
+        <button class = "btn white-text" routerLink='../'>Cancel</button>
+        <button class = "btn btn-primary"(click)="addContent(contentInput.value)">Add</button>
+    </div>
+</div>

@@ -33,7 +33,7 @@ app.get('/blogs', (req, res)=>{
 });
 
 app.post('/blogs', (req, res)=>{
-    (new Blog({'title' : req.body.title, 'author': req.body.author}))
+    (new Blog({'title' : req.body.title}))
         .save()
         .then((blog) => res.send(blog))
         .catch((error)=> console.log(error));
@@ -46,7 +46,7 @@ app.get('/blogs/:blogId', (req, res)=>{
 });
 
 app.patch('/blogs/:blogsId', (req, res) => {
-    Blog.findOneAndUpdate({ '_id': req.params.blogId}, { $set: req.body })
+    Blog.findOneAndUpdate({ '_id': req.params.blogId}, { 'title': req.body.title })
         .then((blog) => res.send(blog))
         .catch((error)=> console.log(error));
 });

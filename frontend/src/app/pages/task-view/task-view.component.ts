@@ -37,15 +37,14 @@ deleteBlog(blog: Blog) {
   // the CURRENTLY SELECTED LIST, not necessarily the list that just got
   // its X button clicked...
   this.taskService.deleteBlog(blog._id)
-      .subscribe(() => this.blogs = this.blogs.filter(l => l._id !== blog._id));
+      .subscribe(() => this.blogs = this.blogs.filter(b => b._id !== blog._id));
 }
 
 addContentClick() {
   if (!this.blogId) {
-    alert("Please select a list to add tasks to");
-    return
+    alert("Please select a blog to add content to");
+    return;
   }
-
-  this.router.navigate(["./new-content"], { relativeTo: this.route });
+  this.router.navigate(['./new-content'], { relativeTo: this.route });
 }
 }

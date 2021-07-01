@@ -12,8 +12,8 @@ export class TaskService {
     return this.webService.get('blogs');
   }
 
-  createBlog(title: string, author: string){
-    return this.webService.post('blogs', {title, author});
+  createBlog(title: string){
+    return this.webService.post('blogs', {title});
   }
 
   getContents(blogId: string){
