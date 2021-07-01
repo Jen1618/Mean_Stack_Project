@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
 
 const ContentSchema = new mongoose.Schema({
-    info:{
-        type: String,
-        trim: true,
-        minlength: 3
-    },
+    info: String,
     _blogId:{
         type: mongoose.Types.ObjectId,
         required: true
@@ -14,4 +10,4 @@ const ContentSchema = new mongoose.Schema({
 
 const Content = mongoose.model('Content', ContentSchema);
 
-mongoose.model.exports = Content;
+module.exports = Content;

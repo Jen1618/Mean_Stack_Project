@@ -3,6 +3,7 @@ const app = express();
 
 const mongoose = require('./database/mongoose');
 
+const PORT = 3000;
 const Content = require('./database/models/content');
 const Blog = require('./database/models/blog');
 app.use(express.json());
@@ -67,7 +68,7 @@ app.get('/blogs/:blogId/contents', (req, res) =>{
 });
 
 app.post('/blogs/:blogId/contents', (req, res) =>{
-    (new Content({'_blogId':req.params.listId, 'info': req.body.title}))
+    (new Content({'info': req.body.info, '_blogId':req.params.blogId}))
         .save()
         .then((content) => res.send(content))
         .catch((error)=> console.log(error));
